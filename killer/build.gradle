@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'bin.mt.signature'
+    namespace 'abhi.kill.sign'
     compileSdk 32
     ndkVersion '24.0.8215888'
 
