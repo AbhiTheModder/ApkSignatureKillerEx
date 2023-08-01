@@ -127,9 +127,9 @@ public class KillerApplication extends Application {
 
     private static void killOpen(String packageName) {
         try {
-            System.loadLibrary("SignatureKiller");
+            System.loadLibrary("SignKiller");
         } catch (Throwable e) {
-            System.err.println("Load SignatureKiller library failed");
+            System.err.println("Load SignKiller library failed");
             return;
         }
         String apkPath = getApkPath(packageName);
@@ -140,7 +140,7 @@ public class KillerApplication extends Application {
         File apkFile = new File(apkPath);
         File repFile = new File(getDataFile(packageName), "origin.apk");
         try (ZipFile zipFile = new ZipFile(apkFile)) {
-            String name = "assets/SignatureKiller/origin.apk";
+            String name = "assets/SignKiller/origin.apk";
             ZipEntry entry = zipFile.getEntry(name);
             if (entry == null) {
                 System.err.println("Entry not found: " + name);
